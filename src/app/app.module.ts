@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule} from '@angular/router';
+import { AppRoutingModule } from './app.routing';
 
 import { AppComponent } from './app.component';
 import { FrontComponentComponent } from './front-component/front-component.component';
@@ -17,13 +18,6 @@ import { FrontComponentComponent } from './front-component/front-component.compo
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot([
-      {
-        path : 'member',
-        component: FrontComponentComponent
-      }
-
-    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
