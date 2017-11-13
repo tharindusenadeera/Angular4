@@ -23,4 +23,9 @@ export class FrontComponentComponent implements OnInit {
     this.fronts = this._frontService.getFrontsFromService();
   }
 
+  saveData(front:Front){
+    this._frontService.addData(front);
+
+  }
+
 }
