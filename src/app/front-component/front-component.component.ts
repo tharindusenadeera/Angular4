@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { FrontService } from './front.service';
+import { Front} from './front';
 
 @Component({
   moduleId: module.id,
@@ -8,10 +10,17 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class FrontComponentComponent implements OnInit {
+  fronts :Front[];
+  newData:any={};
 
-  constructor() { }
+  constructor(private _frontService:FrontService) { }
 
   ngOnInit() {
+    this.getFronts();
+  }
+
+  getFronts(){
+    this.fronts = this._frontService.getFrontsFromService();
   }
 
 }

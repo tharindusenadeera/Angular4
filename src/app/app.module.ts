@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
 import { FrontComponentComponent } from './front-component/front-component.component';
 
+import { FrontService } from './front-component/front.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { FrontComponentComponent } from './front-component/front-component.compo
     FormsModule,
     HttpModule,
   ],
-  providers: [],
+  providers: [FrontService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
