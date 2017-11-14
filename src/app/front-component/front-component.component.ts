@@ -24,7 +24,9 @@ export class FrontComponentComponent implements OnInit {
   }
 
   saveData(front:Front){
-    this._frontService.addData(front);
+    this._frontService.addData(front).subscribe(data => {                
+         console.log('Successful')
+  });
 
   }
 

@@ -1,5 +1,5 @@
 import{ Injectable } from '@angular/core';
-import{ Http,Response,Headers } from '@angular/http';
+import{ Http,Response,Headers,RequestOptions } from '@angular/http';
 import{ Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { Front } from './front';
@@ -14,12 +14,20 @@ export class FrontService{
         return[]
     }
 
+    getSomeThing() {
+        return this.http.get('http://localhost:3000/').map((res:Response) => res.json());
+      }
+      
     addData(front:Front){
         console.log(front);
+        var body = JSON.stringify(front);
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.post('http://localhost:3000/users/add', JSON.stringify(front), { headers: headers })
-        .map(res => res.json());
+        headers.append('Access-Control-Allow-Origin','*');
+        var options = new RequestOptions({ headers: headers});
+        return this.http.post('/users/add', body, options);
         
     }
+
+
 }
