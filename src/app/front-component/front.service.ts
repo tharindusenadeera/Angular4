@@ -14,9 +14,6 @@ export class FrontService{
         return[]
     }
 
-    getSomeThing() {
-        return this.http.get('http://localhost:3000/').map((res:Response) => res.json());
-      }
       
     addData(front:Front){
         console.log(front);
